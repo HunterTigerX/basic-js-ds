@@ -17,9 +17,31 @@ class BinarySearchTree {
     return this.data === null ? null : this.data;
   }
 
-  add(/* data */) {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  add(data) {
+    if (this.data === null) {
+      this.data = new BinarySearchTree(data);
+      return data;
+    } else {
+      let currentObject = this.data;
+      function addBranchOrLeafToTree(dataX) {
+        if (data < dataX.data) {
+          if (dataX.left === null) {
+            dataX.left = new BinarySearchTree(data);
+            return;
+          } else {
+            addBranchOrLeafToTree(dataX.left);
+          }
+        } else {
+          if (dataX.right === null) {
+            dataX.right = new BinarySearchTree(data);
+            return;
+          } else {
+            addBranchOrLeafToTree(dataX.right);
+          }
+        }
+      }
+      return addBranchOrLeafToTree(currentObject);
+    }
   }
 
   has(/* data */) {
