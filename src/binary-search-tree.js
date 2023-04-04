@@ -144,7 +144,6 @@ class BinarySearchTree {
     let returnMin = (leftData) => {
       if (leftData.left === null) {
         result = leftData.data;
-        return leftData.data;
       } else {
         returnMin(leftData.left);
       }
@@ -158,7 +157,6 @@ class BinarySearchTree {
     let returnMin = (rightData) => {
       if (rightData.right === null) {
         result = rightData.data;
-        return rightData.data;
       } else {
         returnMin(rightData.right);
       }
